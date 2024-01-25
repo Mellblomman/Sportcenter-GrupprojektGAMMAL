@@ -1,3 +1,19 @@
+#                                           M1 - must have
+-------------------------------------------------------------------------------------------------------
+
+Feature: Boka bana
+
+Scenario: Användaren bokar banor
+
+"Som användare vill jag ha möjlighet att boka banor // för att kunna få tillgång till en bana"
+
+Givet att användaren är på hemsidan 
+Och ska boka en bana
+När användaren fyller i fältet för att boka en bana
+Så får användaren information på hemsidan att bokning är genomförd
+
+-------------------------------------------------------------------------------------------------------
+
 Feature: Olika aktiviteter
 
 Scenario: Val av aktivitet
@@ -43,47 +59,28 @@ Scenario: Tillgängliga tider för banor
 Givet att användaren befinner sig på startsidan
 Och klickar på en aktivitet i dropdown menyn
 När användaren klickar på en tid hen vill boka
-Så får användaren upp vilka banor som är tillgängliga den tiden.
+Så får användaren upp vilka banor som är tillgängliga den tiden
 
 -------------------------------------------------------------------------------------------------------
 
-Feature: Registrera konto
+Scenario: Användaren ska veta vad det kostar innan hen bokar
 
-Scenario: Skapa konto för användare
+"Som användaren vill jag se priset på aktiviteter // för att veta vad aktiviteterna kostar"
 
-"Som användare ska jag kunna registrera ett konto // för att ha möjligheten att boka aktiviteter"
+Givet att användaren har valt aktivitet 
+När användaren tittar på vilka tider som finns tillgängliga
+Så ska användaren kunna se vad det kostar varje bokad timme
+
+-------------------------------------------------------------------------------------------------------
+
+Scenario: Användaren vill ha möjlighet att kunna avboka aktivitet
+
+"Som användaren vill jag kunna avboka en aktivitet // för att förhinder kan uppstå"
 
 Givet att användaren är på startsidan
-När användaren klickar på registrera konto
-Så får användaren fylla i Email och önskat lösenord
-
-Scenario: Skapa konto för admin
-
-"Som admin vill jag kunna registrera ett konto // för att få åtkomst till administrativa funktioner"
-
-Givet att admin kan registrera ett konto
-Och få åtkomst till administra funktioner
-När admin uppdaterar applikationen
-Så får admin ett konto med mer behörighet
-
-
-***********************************************************
-
-Feature: Inloggning
-
-Scenario: Logga in som användare
-
-Som användare vill jag kunna logga in på hemsidan // för att komma åt min bokningshistorik.
-
-Givet att jag är på hemsidan
-Och att det finns ett inloggningsformulär
-När jag fyller i "användare@outlook.com" i epost-fältet
-Och "123abc" i lösenordsfältet
-Så loggas jag in
-
-***********************************************************
-
-
+När användaren skriver in sitt bokningsnnummer i fältet för avboka
+Och bekräftar avbokning
+Så får användaren information på hemsidan att avbokning är avbokad
 
 -------------------------------------------------------------------------------------------------------
 
@@ -140,6 +137,45 @@ Så ska banans information vara uppdaterad på hemsidan
 
 
 
+
+#                                          M3 - nice to have
+-------------------------------------------------------------------------------------------------------
+
+Feature: Registrera konto
+
+Scenario: Skapa konto för användare
+
+"Som användare ska jag kunna registrera ett konto // för att ha möjligheten att boka aktiviteter"
+
+Givet att användaren är på startsidan
+När användaren klickar på registrera konto
+Så får användaren fylla i Email och önskat lösenord
+
+Scenario: Skapa konto för admin
+
+"Som admin vill jag kunna registrera ett konto // för att få åtkomst till administrativa funktioner"
+
+Givet att admin kan registrera ett konto
+Och få åtkomst till administra funktioner
+När admin uppdaterar applikationen
+Så får admin ett konto med mer behörighet
+
+
+***********************************************************
+
+Feature: Inloggning
+
+Scenario: Logga in som användare
+
+"Som användare vill jag kunna logga in på hemsidan // för att komma åt min bokningshistorik"
+
+Givet att användaren är på hemsidan
+Och att det finns ett inloggningsformulär
+När användaren fyller i "användare@outlook.com" i epost-fältet
+Och "123abc" i lösenordsfältet
+Så loggas användaren in
+
+***********************************************************
 
 
  
