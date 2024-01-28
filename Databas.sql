@@ -1,25 +1,21 @@
-CREATE TABLE users (
-    user_id INT PRIMARY KEY,
+-- Funkar så att den sparar ens information tillsammans med ens booking_id
+CREATE TABLE bookings (
+    booking_id INT PRIMARY KEY,
     email VARCHAR(255),
     phone VARCHAR(20)
 );
 
-CREATE TABLE bookings (
-    booking_id INT PRIMARY KEY,
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+-- Är bara ett extra table kopplat för att kunna använda primary key och sen plockar bort allt
+CREATE TABLE KeyTable (
+    booking_id INT,
+    FOREIGN KEY (booking_id) REFERENCES bookings(booking_id) ON DELETE CASCADE
 );
 
-
 -- Test
-insert into bookings (booking_id, user_id) VALUES
-('123456789','1');
-
-INSERT INTO users (user_id, email, phone)  VALUES
+INSERT INTO bookings (booking_id, email, phone)  VALUES
 ('1','mattias@outlook.com','0625626726');
 
-DELETE FROM users WHERE user_id = 1;
-------
+DELETE FROM bookings WHERE booking_id = 1;
 
 CREATE SCHEMA public;
 DROP SCHEMA public CASCADE;
