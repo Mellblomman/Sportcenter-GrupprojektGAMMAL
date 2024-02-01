@@ -63,6 +63,8 @@ Så får användaren upp vilka banor som är tillgängliga den tiden
 
 -------------------------------------------------------------------------------------------------------
 
+Feature: Pris
+
 Scenario: Användaren ska veta vad det kostar innan hen bokar
 
 "Som användaren vill jag se priset på aktiviteter // för att veta vad aktiviteterna kostar"
@@ -73,6 +75,8 @@ Så ska användaren kunna se vad det kostar varje bokad timme
 
 -------------------------------------------------------------------------------------------------------
 
+Feature: Avbokning
+
 Scenario: Användaren vill ha möjlighet att kunna avboka aktivitet
 
 "Som användaren vill jag kunna avboka en aktivitet // för att förhinder kan uppstå"
@@ -81,6 +85,18 @@ Givet att användaren är på startsidan
 När användaren skriver in sitt bokningsnnummer i fältet för avboka
 Och bekräftar avbokning
 Så får användaren information på hemsidan att avbokning är avbokad
+
+-------------------------------------------------------------------------------------------------------
+
+Feature: Kundsupport
+
+"Som användare vill jag kunna kontakta sportcentert // för att kunna få hjälp med mina frågor"
+
+Givet att användaren är på kontaktsidan
+När användaren fyller i kontaktformuläret
+Och trycker på skicka
+Så får användaren ett meddelande att ärendet skickats 
+Och admin får ett mail med användarens fråga
 
 -------------------------------------------------------------------------------------------------------
 
@@ -130,6 +146,15 @@ När admin väljer en bana att uppdatera
 Och admin ändrar tillgängligheten/resurserna
 Och admin sparar ändringarna
 Så ska banans information vara uppdaterad på hemsidan
+
+Scenario: Testa koden
+
+"Som admin vill jag kunna testa koden // för att se så att koden utför rätt uppgifter"
+
+Givet att admin är i backend
+Och ska testa koden
+När koden körs igenom testerna
+Så ska testerna bli godkända
 
 -------------------------------------------------------------------------------------------------------
 
