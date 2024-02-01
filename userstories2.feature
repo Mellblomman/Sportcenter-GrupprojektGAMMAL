@@ -103,6 +103,18 @@ Och admin får ett mail med användarens fråga
 
 -------------------------------------------------------------------------------------------------------
 
+Feature: Navigationsmeny
+
+Scenario: Navigera på hemsidan
+
+"Som användare vill jag kunna navigera på hemsidan // för att enkelt ta mig runt"
+
+Givet att användare befinner sig på startsidan
+När användaren klickar på någon av knapparna i navigationsmenyn
+Så ska användaren komma dit hen klickade
+
+-------------------------------------------------------------------------------------------------------
+
 Feature: Admins behörigheter
 
 Scenario: Admin uppdaterar aktiviteter
