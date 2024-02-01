@@ -37,6 +37,18 @@ och hovrar över dropdown menyn som visar alla aktiviteter
 När användaren klickar på en av aktiviteterna
 Så får användaren upp tillgängliga datum för vald aktivitet
 
+----
+
+Feature: Knappt från kalender till bokningsformulär
+
+Scenario: Gå vidare till bokningsformulär från kalender
+
+"Som användare vill jag kunna ta mig från kalendern till bokningsformulär // för att kunna genomföra min bokning"
+
+Givet att användaren ser kalendern med tillgängliga datum för vald aktivitet
+När användaren klickar på Nästa
+Så ska användaren gå vidare till bokningsformuläret
+
 -------------------------------------------------------------------------------------------------------
 
 Feature: Tid
