@@ -138,14 +138,6 @@ Och admin ändrar tillgängligheten/resurserna
 Och admin sparar ändringarna
 Så ska banans information vara uppdaterad på hemsidan
 
-Scenario: Testa koden
-
-"Som admin vill jag kunna testa koden // för att se så att koden utför rätt uppgifter"
-
-Givet att admin är i backend
-Och ska testa koden
-När koden körs igenom testerna
-Så ska testerna bli godkända
 
 -------------------------------------------------------------------------------------------------------
 
