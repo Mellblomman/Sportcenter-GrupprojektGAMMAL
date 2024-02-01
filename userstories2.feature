@@ -107,7 +107,7 @@ Feature: Navigationsmeny
 
 Scenario: Navigera på hemsidan
 
-"Som användare vill jag kunna navigera på hemsidan // för att enkelt ta mig runt"
+"Som användare vill jag kunna navigera på hemsidan // för att enkelt ta mig runt på sidan"
 
 Givet att användare befinner sig på startsidan
 När användaren klickar på någon av knapparna i navigationsmenyn
