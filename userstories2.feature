@@ -26,7 +26,7 @@ Så ser användaren alla aktiviteter som finns tillgängliga på sportcenter
 
 -------------------------------------------------------------------------------------------------------
 
-Feature: Datum
+Feature: Kalender
 
 Scenario: Tillgängliga datum
 
@@ -52,18 +52,7 @@ Så får användaren upp tillgängliga tider på vald aktivitet
 
 -------------------------------------------------------------------------------------------------------
 
-Scenario: Tillgängliga tider för banor 
-
-"Som användare vill jag se tillgängliga banor // För att veta vilka banor jag kan boka"
-
-Givet att användaren befinner sig på startsidan
-Och klickar på en aktivitet i dropdown menyn
-När användaren klickar på en tid hen vill boka
-Så får användaren upp vilka banor som är tillgängliga den tiden
-
--------------------------------------------------------------------------------------------------------
-
-Feature: Pris
+Feature: Prisinformation
 
 Scenario: Användaren ska veta vad det kostar innan hen bokar
 
@@ -75,20 +64,22 @@ Så ska användaren kunna se vad det kostar varje bokad timme
 
 -------------------------------------------------------------------------------------------------------
 
-Feature: Avbokning
+Feature: Avbokningsformulär
 
 Scenario: Användaren vill ha möjlighet att kunna avboka aktivitet
 
 "Som användaren vill jag kunna avboka en aktivitet // för att förhinder kan uppstå"
 
-Givet att användaren är på startsidan
+Givet att användaren har klickat på Avboka i navigationsmenyn
 När användaren skriver in sitt bokningsnnummer i fältet för avboka
-Och bekräftar avbokning
-Så får användaren information på hemsidan att avbokning är avbokad
+Och bekräftar klickar på knappen Avboka
+Så får användaren information på hemsidan att avbokningen är genomförd
 
 -------------------------------------------------------------------------------------------------------
 
-Feature: Kundsupport
+Feature: Kontakt
+
+Scenario: Användaren vill kunna kontakta sportcentret för att få hjälp vid behov
 
 "Som användare vill jag kunna kontakta sportcentert // för att kunna få hjälp med mina frågor"
 
