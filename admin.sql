@@ -8,7 +8,6 @@ SET tillgänglighet = CASE WHEN tillgänglighet = 'True' THEN 'False' ELSE 'True
 WHERE bana_id = your_bana_id;
 
 
-
 UPDATE Bokningar
 SET tid_datum = new_time_date
 WHERE boknings_id = your_boknings_id;
