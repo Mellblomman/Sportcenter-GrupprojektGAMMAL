@@ -1,6 +1,7 @@
 import psycopg2
 
-def update_price(bana_id, new_price):
+#Update price
+def update_price(court_id, new_price):
     conn = psycopg2.connect(
         host='your_postgres_host',
         user='your_postgres_user',
@@ -9,14 +10,15 @@ def update_price(bana_id, new_price):
     )
     cursor = conn.cursor()
 
-    query = f"UPDATE Banor SET pris = {new_price} WHERE bana_id = {bana_id}"
+    query = f"UPDATE court SET price = {new_price} WHERE court_id = {court_id}"
 
     cursor.execute(query)
     conn.commit()
 
     conn.close()
 
-def toggle_availability(bana_id):
+#Availability
+def toggle_availability(court_id):
     conn = psycopg2.connect(
         host='your_postgres_host',
         user='your_postgres_user',
@@ -25,14 +27,15 @@ def toggle_availability(bana_id):
     )
     cursor = conn.cursor()
 
-    query = f"UPDATE Banor SET tillgänglighet = CASE WHEN tillgänglighet = 'True' THEN 'False' ELSE 'True' END WHERE bana_id = {bana_id}"
+    query = f"UPDATE court SET availability = CASE WHEN availability = TRUE THEN FALSE ELSE TRUE END WHERE court_id = {court_id}"
 
     cursor.execute(query)
     conn.commit()
 
     conn.close()
 
-def update_booking_time(boknings_id, new_time_date):
+#Add activity
+def add_activity(your_court_id, new_price):
     conn = psycopg2.connect(
         host='your_postgres_host',
         user='your_postgres_user',
@@ -41,14 +44,15 @@ def update_booking_time(boknings_id, new_time_date):
     )
     cursor = conn.cursor()
 
-    query = f"UPDATE Bokningar SET tid_datum = '{new_time_date}' WHERE boknings_id = {boknings_id}"
+    query = f"INSERT INTO court (court_id, activity, datetime, price, availability) VALUES ({new_court_id}, {new_activity}, {new_datetime}, {new_price}, {new_availability})"
 
     cursor.execute(query)
     conn.commit()
 
     conn.close()
 
-def add_activity(your_bana_id, new_price):
+#Delete activity
+def delete_activity(court_id):
     conn = psycopg2.connect(
         host='your_postgres_host',
         user='your_postgres_user',
@@ -57,14 +61,15 @@ def add_activity(your_bana_id, new_price):
     )
     cursor = conn.cursor()
 
-    query = f"INSERT INTO Banor (bana_id, Aktivitet, tid, datum, pris, tillgänglighet) VALUES ({your_bana_id}, 'New Activity', 'New Time', 'New Date', {new_price}, 'Available')"
+    query = f"DELETE FROM court WHERE court_id = {court_id}"
 
     cursor.execute(query)
     conn.commit()
 
     conn.close()
 
-def delete_activity(your_bana_id):
+#Update time of booking
+def update_booking_time(booking_id, new_datetime):
     conn = psycopg2.connect(
         host='your_postgres_host',
         user='your_postgres_user',
@@ -73,7 +78,7 @@ def delete_activity(your_bana_id):
     )
     cursor = conn.cursor()
 
-    query = f"DELETE FROM Banor WHERE bana_id = {your_bana_id}"
+    query = f"UPDATE bookings SET datetime = '{new_datetime}' WHERE booking_id = {booking_id}"
 
     cursor.execute(query)
     conn.commit()
